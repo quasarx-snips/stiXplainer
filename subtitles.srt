@@ -35,25 +35,25 @@ Not at all. A shaded park, a tree-lined street and a wide paved car park can fee
 Building layout and airflow matter too.
 
 10
-00:00:56,000 --> 01:00:00,000
+00:00:56,000 --> 00:01:00,000
 Vehicles, buildings and air-conditioning systems can add waste heat as well.
 
 11
-01:00:00,000 --> 01:08:000
+00:01:00,000 --> 00:01:08,000
 The result is an urban heat island: built-up places can be warmer than nearby less-developed areas.
 
 12
-01:08:000 --> 01:11:000
+00:01:08,000 --> 00:01:11,000
 Can we make cities cooler?
 
 13
-01:11:000 --> 01:22:000
+00:01:11,000 --> 00:01:22,000
 We can help. More shade and vegetation, greener roofs, and more reflective roofs and pavements can all reduce heat in the right conditions.
 
 14
-01:22:000 --> 01:25:000
+00:01:22,000 --> 00:01:25,000
 The best choice depends on the place.
 
 15
-01:25:000 --> 01:30:000
+00:01:25,000 --> 00:01:30,000
 So the heat isn't just in the weather. It's also in what we've built.
