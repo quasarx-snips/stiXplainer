@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:04,000
+The sun has gone down. So why does this street still feel like an oven?
+
+2
+00:00:04,000 --> 00:00:13,000
+Because a city is covered in materials that soak up sunlight.
+
+3
+00:00:13,000 --> 00:00:21,000
+Roads, roofs and walls absorb energy through the day, then release some of that stored heat after sunset.
+
+4
+00:00:21,000 --> 00:00:24,000
+And where have the trees gone?
+
+5
+00:00:24,000 --> 00:00:34,000
+Vegetation cools its surroundings with shade and by moving water from soil and leaves into the air.
+
+6
+00:00:34,000 --> 00:00:40,000
+Replace much of that greenery with hard, dry surfaces, and you lose some of that cooling.
+
+7
+00:00:40,000 --> 00:00:43,000
+So every street is equally hot?
+
+8
+00:00:43,000 --> 00:00:52,000
+Not at all. A shaded park, a tree-lined street and a wide paved car park can feel very different.
+
+9
+00:00:52,000 --> 00:00:56,000
+Building layout and airflow matter too.
+
+10
+00:00:56,000 --> 01:00:00,000
+Vehicles, buildings and air-conditioning systems can add waste heat as well.
+
+11
+01:00:00,000 --> 01:08:000
+The result is an urban heat island: built-up places can be warmer than nearby less-developed areas.
+
+12
+01:08:000 --> 01:11:000
+Can we make cities cooler?
+
+13
+01:11:000 --> 01:22:000
+We can help. More shade and vegetation, greener roofs, and more reflective roofs and pavements can all reduce heat in the right conditions.
+
+14
+01:22:000 --> 01:25:000
+The best choice depends on the place.
+
+15
+01:25:000 --> 01:30:000
+So the heat isn't just in the weather. It's also in what we've built.
