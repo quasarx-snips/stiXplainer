@@ -2,31 +2,27 @@
 
 Updated: 2026-11-10
 
-## Current state
+## Stickman explainer pilot
 
-- [x] Public repository and project scaffold.
-- [x] Architecture and production workflow documented.
-- [x] Two-presenter Manim smoke-test scene added.
-- [x] First multi-beat pilot animation scene added at `src/stixplainer/scenes/pilot.py`.
-- [x] Pilot narration draft and source ledger added at repository root (`script.md`, `sources.md`).
-- [x] Pilot visual build plan added.
-- [x] GitHub Actions workflow updated to attempt both the smoke test and pilot scene at 24 fps.
-- [ ] Confirm GitHub Actions completes successfully.
-- [ ] Inspect actual MP4 render for visual and timing errors.
-- [ ] Record and sync British English male narration.
-- [ ] Add licensed music and sound effects.
-- [ ] Create and time subtitles against final narration.
-- [ ] Render final 1920×1080, 24 fps master.
-- [ ] Complete final quality-control review and publish deliverables.
+- [x] Two recurring stick-figure presenters and multi-beat city animation source committed.
+- [x] Pilot narration draft and source ledger committed.
+- [x] British male voice generation script added using Kokoro voice `bm_george` (British English).
+- [x] Subtitle draft committed; timings are provisional and must be checked against the generated narration.
+- [x] FFmpeg assembly script added to combine animation, narration and subtitles.
+- [x] Automated workflow configured for 1080p/24fps animation, British voice generation and final MP4 assembly.
+- [ ] Confirm latest workflow completes all three jobs.
+- [ ] Download and inspect final MP4, duration, resolution, frame rate and audio sync.
+- [ ] Correct subtitle timings against actual speech.
+- [ ] Review the final video for visual quality and story pacing.
+- [ ] Add appropriately licensed music and sound design.
+- [ ] Decide whether the pilot needs photo inserts; the current visual direction is primarily stickman illustration.
 
-## Render verification
+## Quality and honesty notes
 
-The pilot scene and workflow are committed. The workflow is configured to render at low quality (Manim's 480p preset) as an inexpensive technical check, not as the final 1080p master. A successful run and an inspected MP4 are still required before calling the render verified.
+A previous smoke-test artifact was successfully produced: 854×480, 24 fps, about 12.1 seconds. It is a title-card test, not the documentary pilot. The actual pilot MP4 has not yet been verified.
 
-## Editorial verification
+The current workflow aims to create a 1920×1080, 24 fps MP4 with a British English male synthetic narration track and captions. This remains a target until the final artifact is downloaded and inspected. No music or third-party photos are included in the automated build yet; reuse rights must be checked before adding assets.
 
-The script is an initial research-backed draft. The source ledger cites U.S. EPA material for general heat-island mechanisms. It intentionally avoids applying U.S. temperature ranges to Chennai or presenting invented local measurements. Local claims would need India- or city-specific evidence before publication.
+## Core project rule
 
-## Important distinction
-
-Committed source code and a configured workflow are not proof of a successful render. Mark a milestone complete only after inspecting the actual workflow result or output file.
+stiXplainer is a stickman explainer/documentary channel. Prioritize clear recurring characters, expressive gestures, visual metaphors, diagrams, scene transitions and motion-led storytelling over static text slides. Do not call a milestone complete until the actual video has been inspected.
