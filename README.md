@@ -1,80 +1,56 @@
 # stiXplainer
 
-**An AI-assisted animated documentary production studio.**
+**An AI-assisted, hand-drawn stickman documentary studio.**
 
-stiXplainer is an open-source project exploring an end-to-end workflow for turning researched documentary ideas into visually engaging animated films. The goal is to combine human editorial judgement with reproducible, open-source production tools.
+A zero-budget workflow for turning researched documentary ideas into story-led 2D explainer films. The visual target is based on the owner's supplied audio-removed reference: expressive stick-figure acting, illustrated environments, objects, diagrams and changing scene scales. See [the visual style bible](docs/visual-style-bible.md).
 
-> **Project status:** Early development — foundational repository and workflow scaffold. A working video-rendering pipeline and sample film are not yet complete.
+## Default production settings
 
-## Vision
+| Setting | Default |
+|---|---|
+| Pilot | 60–90 seconds |
+| Full documentary | 10–15 minutes |
+| Export | 1920×1080, 24 fps, 16:9 |
+| Visuals | Original hand-drawn 2D stickmen + illustrated worlds + explanatory diagrams |
+| Narration | Warm British English male storyteller |
+| Captions | Separate synchronized SRT |
+| Budget | ₹0; no paid credits, trials, subscriptions or paid fallbacks |
 
-Create a beginner-friendly production workflow that can support:
-- Research, source tracking and fact-checking.
-- Documentary scripting and visual story planning.
-- Hybrid animation: stick-figure characters, hand-drawn-style illustrations and selected photographic inserts.
-- Narration, sound design, subtitles and synchronized editing.
-- Reproducible 1080p, 24 fps, 16:9 video exports.
+Edit [config/production_profile.toml](config/production_profile.toml) and [docs/default-production-profile.md](docs/default-production-profile.md) to change the defaults.
 
-## Production target
+## Eight specialist agents
 
-| Setting | Target |
-| --- | --- |
-| Film length | 10–15 minutes |
-| Resolution | 1920 × 1080 |
-| Frame rate | 24 fps |
-| Aspect ratio | 16:9 |
-| Visual language | Stick figures + rough illustrations + occasional photographs |
-| Narration direction | British English, male storyteller |
-| Intended cadence | Approximately one film per week |
-| Cost constraint | ₹0: free and open-source tools only; no paid credits or paid fallbacks |
+- Research Producer
+- Fact Checker
+- Scriptwriter
+- Story Architect
+- Visual Director
+- Character Designer
+- Animation Engineer
+- Audio, Editor & QC Producer
 
-These are project goals, not claims that the pipeline already achieves them.
+The **stiXplainer Studio Director** is the default coordinator. Role profiles are in `.github/agents/`; shared instructions are in [AGENTS.md](AGENTS.md), and the hand-off sequence is in [docs/agent-team.md](docs/agent-team.md).
 
-## Planned toolchain
+**Important runtime note:** these are reusable custom-agent profiles, not eight processes already running. Actual subagent delegation needs a compatible GitHub Copilot / VS Code agent host with custom-agent and subagent support. GitHub Actions does not execute the profiles. If the active host lacks subagent support, use the same roles sequentially and don't claim they ran autonomously.
 
-The implementation will evaluate and integrate free/open-source components such as:
-- **Python** for orchestration and production logic.
-- **Manim Community** for programmatic animation.
-- **FFmpeg** for video and audio assembly.
-- **Pillow** and SVG assets for image and character workflows.
-- **Kokoro** for local text-to-speech experiments, subject to voice and runtime validation.
-- **Whisper** for optional subtitle generation.
+## Production toolchain
 
-Tool choices will be validated against the zero-budget requirement before adoption. No paid-service fallback is permitted.
+Python, Manim Community, SVG/Pillow, FFmpeg and Kokoro are current free/open-source candidates, subject to actual runtime and quality validation. No paid fallback is allowed.
 
-## Repository map
+## Project principles
 
-```text
-.
-├── .github/workflows/   # Automated checks
-├── docs/                # Architecture and production notes
-├── src/stixplainer/     # Application package
-├── tests/               # Automated tests
-├── .gitignore
-├── pyproject.toml
-└── README.md
-```
+- Evidence-backed claims and traceable sources.
+- Character action and illustration carry the story; no static narrated slideshow.
+- Original character/art assets; reference is inspiration, not material to copy.
+- Human approval for material creative changes, rights-sensitive assets, spending and public release.
+- A render is complete only after the real file is inspected.
 
-## Development approach
+## Status
 
-1. Establish a reproducible, free development and rendering environment.
-2. Build a 60–90 second proof-of-concept before attempting a full episode.
-3. Validate character motion, illustration animation, photo inserts, narration, sound effects and subtitle timing.
-4. Measure render time and resource usage on genuinely free compute.
-5. Expand toward the 10–15 minute production target only after the pilot is repeatable.
+The repository has an earlier pilot script and animation pipeline. The new reference style bible and agent profiles are now committed. The existing pilot scene still needs restyling to match the new reference, and the custom-agent runtime must be validated in a compatible host before claiming that eight subagents are actually executing.
 
-## Quality principles
-
-- **Evidence first:** factual claims must be traceable to sources.
-- **Story over slideshow:** motion and visual explanation should carry the narrative.
-- **Human editorial control:** AI assists; a human approves research, scripts and final cuts.
-- **Reproducibility:** record dependencies, settings and production steps.
-- **Cost transparency:** document free-tier limits and never silently switch to a paid service.
-
-## Contributing
-
-See [docs/architecture.md](docs/architecture.md) for the initial system boundaries and planned pipeline. Contributions, issue reports and practical tests on free compute are welcome.
+See [docs/production-status.md](docs/production-status.md).
 
 ## Licence
 
-A project licence will be selected before the first public release. Until then, do not assume that the repository grants reuse rights to its contents or third-party assets.
+No licence has been selected. Do not assume reuse rights for repository contents or third-party assets.
