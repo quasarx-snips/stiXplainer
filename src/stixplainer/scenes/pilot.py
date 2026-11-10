@@ -103,13 +103,14 @@ class UrbanHeatIslandPilot(Scene):
         clouds=VGroup(cloud(LEFT*4+UP*2.3,.8),cloud(RIGHT*2.4+UP*2.7,.65))
         maya=stickman("MAYA",LEFT*2.1+DOWN*1.7,.9)
         leo=stickman("LEO",RIGHT*2.1+DOWN*1.7,.9,shirt="#E5A34C")
-        heatwaves=VGroup(*[ParametricFunction(lambda t, x=x: np.array([x+.12*np.sin(t*5),t,0]),
-                    t_range=[-1.3,.2],color=WARM,stroke_width=4).move_to(RIGHT*x+UP*.0)
-                    for x in [-.55,0,.55]])
+        heatwaves=VGroup(*[
+            Arc(radius=.34, start_angle=.15, angle=PI*.72, color=WARM, stroke_width=4)
+            .move_to(RIGHT*x+UP*.0)
+            for x in [-.55,0,.55]])
         heading=label("WHY IS THE CITY STILL HOT?",32,PAPER).to_edge(UP,buff=.35)
         self.play(FadeIn(bg),FadeIn(moon),FadeIn(clouds),FadeIn(maya),FadeIn(leo),Write(heading),run_time=2)
         self.play(FadeIn(heatwaves),maya[0].animate.shift(UP*.12),leo[0].animate.shift(UP*.12),run_time=2)
-        self.wait(5)
+        self.wait(7)
         self.play(FadeOut(VGroup(bg,moon,clouds,maya,leo,heatwaves,heading)),run_time=1)
 
         # Beat 2: hot sun warms roofs and roads; heat is stored.
@@ -165,7 +166,7 @@ class UrbanHeatIslandPilot(Scene):
         for tag,panel in zip(tags,panels): tag.next_to(panel,DOWN,buff=.15)
         h=label("NOT EVERY STREET IS THE SAME",29).to_edge(UP,buff=.35)
         self.play(FadeIn(bg),FadeIn(panels),FadeIn(park_tree),FadeIn(towers),FadeIn(carpark),FadeIn(tags),Write(h),run_time=2)
-        self.wait(6)
+        self.wait(8)
         self.play(FadeOut(VGroup(bg,panels,park_tree,towers,carpark,tags,h)),run_time=1)
 
         # Beat 5: people, cars and cooling equipment add waste heat.
