@@ -1,12 +1,25 @@
-name: stiXplainer pilot build
+name: stiXplainer reference-style pilot
 
 on:
   push:
     branches: [main]
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - "subtitles.srt"
+      - "script.md"
+      - "sources.md"
+      - "assets/**"
+      - ".github/workflows/animation-smoke-test.yml"
   workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: stixplainer-pilot-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   render:
@@ -19,13 +32,12 @@ jobs:
           python-version: "3.11"
           cache: pip
       - name: Install animation system libraries
-        run: |
-          sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config
+        run: sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config
       - name: Install animation dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
-      - name: Render stickman pilot at 1080p and 24 fps
+      - name: Render reference-style pilot at 1080p and 24 fps
         run: manim -qh --fps 24 src/stixplainer/scenes/pilot.py UrbanHeatIslandPilot
       - name: Upload pilot animation
         uses: actions/upload-artifact@v4
@@ -48,7 +60,7 @@ jobs:
           sudo apt-get install -y espeak-ng
           python -m pip install --upgrade pip
           python -m pip install "kokoro>=0.9.4" soundfile
-      - name: Generate British male narration (bm_george)
+      - name: Generate British male narration
         run: python scripts/generate_narration.py
       - name: Upload narration WAV
         uses: actions/upload-artifact@v4
@@ -76,12 +88,12 @@ jobs:
         with:
           name: stixplainer-narration
           path: artifacts
-      - name: Assemble final MP4 with captions
+      - name: Assemble MP4 with separate subtitles
         run: python scripts/assemble_pilot.py
-      - name: Upload final documentary MP4 and source audio
+      - name: Upload final pilot package
         uses: actions/upload-artifact@v4
         with:
-          name: stixplainer-final-pilot
+          name: stixplainer-reference-style-pilot
           path: |
             artifacts/final_video.mp4
             artifacts/narration.wav
