@@ -110,7 +110,7 @@ class UrbanHeatIslandPilot(Scene):
         heading=label("WHY IS THE CITY STILL HOT?",32,PAPER).to_edge(UP,buff=.35)
         self.play(FadeIn(bg),FadeIn(moon),FadeIn(clouds),FadeIn(maya),FadeIn(leo),Write(heading),run_time=2)
         self.play(FadeIn(heatwaves),maya[0].animate.shift(UP*.12),leo[0].animate.shift(UP*.12),run_time=2)
-        self.wait(7)
+        self.wait(8.5)
         self.play(FadeOut(VGroup(bg,moon,clouds,maya,leo,heatwaves,heading)),run_time=1)
 
         # Beat 2: hot sun warms roofs and roads; heat is stored.
@@ -129,7 +129,7 @@ class UrbanHeatIslandPilot(Scene):
         h=label("ROOFS + ROADS SOAK UP SUNLIGHT",26).to_edge(UP,buff=.35)
         self.play(FadeIn(bg),FadeIn(sun),Create(rays),FadeIn(house),FadeIn(road),Write(h),run_time=2)
         self.play(FadeOut(rays),LaggedStart(*[GrowArrow(a) for a in arrows],lag_ratio=.2),run_time=2)
-        self.wait(5)
+        self.wait(6.5)
         self.play(FadeOut(VGroup(bg,sun,house,road,arrows,h)),run_time=1)
 
         # Beat 3: green space creates shade and evapotranspirative cooling.
@@ -146,7 +146,7 @@ class UrbanHeatIslandPilot(Scene):
         h=label("TREES GIVE SHADE AND HELP COOL THE AIR",25).to_edge(UP,buff=.35)
         self.play(FadeIn(bg),FadeIn(park),FadeIn(paved),FadeIn(trees),FadeIn(bench),FadeIn(hotcar),Write(h),run_time=2)
         self.play(LaggedStart(*[GrowArrow(a) for a in vapor],lag_ratio=.2),run_time=2)
-        self.wait(5)
+        self.wait(6.5)
         self.play(FadeOut(VGroup(bg,park,paved,trees,bench,hotcar,vapor,h)),run_time=1)
 
         # Beat 4: different urban microclimates; show a visual comparison.
@@ -166,7 +166,7 @@ class UrbanHeatIslandPilot(Scene):
         for tag,panel in zip(tags,panels): tag.next_to(panel,DOWN,buff=.15)
         h=label("NOT EVERY STREET IS THE SAME",29).to_edge(UP,buff=.35)
         self.play(FadeIn(bg),FadeIn(panels),FadeIn(park_tree),FadeIn(towers),FadeIn(carpark),FadeIn(tags),Write(h),run_time=2)
-        self.wait(8)
+        self.wait(9.5)
         self.play(FadeOut(VGroup(bg,panels,park_tree,towers,carpark,tags,h)),run_time=1)
 
         # Beat 5: people, cars and cooling equipment add waste heat.
@@ -183,7 +183,7 @@ class UrbanHeatIslandPilot(Scene):
         heat=VGroup(*[Arrow(obj.get_top(),obj.get_top()+UP*.85,color=WARM,stroke_width=5,buff=0) for obj in [car,building,ac]])
         self.play(FadeIn(bg),Write(heading),FadeIn(car),FadeIn(building),FadeIn(ac),run_time=2)
         self.play(LaggedStart(*[GrowArrow(a) for a in heat],lag_ratio=.25),run_time=2)
-        self.wait(5)
+        self.wait(6.5)
         self.play(FadeOut(VGroup(bg,heading,car,building,ac,heat)),run_time=1)
 
         # Beat 6: practical interventions, shown as a greener street.
@@ -201,7 +201,7 @@ class UrbanHeatIslandPilot(Scene):
         h2=label("SHADE  •  TREES  •  REFLECTIVE ROOFS",23,LEAF_DARK).next_to(heading,DOWN,buff=.25)
         self.play(FadeIn(bg),Write(heading),FadeIn(street),FadeIn(houses),FadeIn(greentops),FadeIn(h2),run_time=2)
         self.play(LaggedStart(*[GrowArrow(a) for a in arrows],lag_ratio=.2),run_time=2)
-        self.wait(5)
+        self.wait(6.5)
         self.play(FadeOut(VGroup(bg,heading,street,houses,greentops,arrows,h2)),run_time=1)
 
         # Closing: return to the characters, with a clear final thought.
@@ -212,4 +212,4 @@ class UrbanHeatIslandPilot(Scene):
         sub=Text("A little science. A clearer picture.",font_size=23,color=SUN).next_to(end,DOWN,buff=.3)
         self.play(FadeIn(bg),FadeIn(maya),FadeIn(leo),Write(end),FadeIn(sub),run_time=2)
         self.play(maya[0].animate.shift(UP*.12),leo[0].animate.shift(UP*.12),run_time=1)
-        self.wait(5)
+        self.wait(6.5)
